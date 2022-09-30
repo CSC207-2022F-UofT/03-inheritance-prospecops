@@ -30,3 +30,70 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+
+/**
+        * This file defines an child class named CrossbodyBag.
+        * We have provided most of the code for this class, however,
+        * you should implement the provided TODOs.
+        *
+        * You may find the readings in chapter 3. Relationships between Classes
+        * helpful while working through this exercise.
+        */
+public class CrossbodyBag extends Bag{
+
+//    private String color;
+//    private int numberOfContents;
+//    private int capacity;
+//    private String [] Contents;
+    private int numberOfStraps;
+    /**
+     * Creates a new CrossbodyBag with the given color and
+     * capacity.
+     *
+     * @param color         represents the color of the CrossbodyBag.
+     * @param capacity      represents the capacity of the CrossbodyBag.
+     */
+    public CrossbodyBag(String color, int capacity, int numberOfStraps) {
+        /**
+         * This is how we call the parent's constructor
+         * The Python equivalent is super().__init__(...)
+         */
+        super(color, capacity);
+        this.numberOfStraps = numberOfStraps;
+    }
+
+    /**
+     * Increase the capacity of this bag by 2.
+     */
+    @Override
+    public void enhance() {
+        /* TODO: Implement this method.
+         *       You may want to use the increaseCapacity() method that was
+         *       implemented in Bag.
+         *
+         * To call a method defined in a parent, you use super.method_name(...)
+         */
+        super.increaseCapacity(2);
+    }
+
+    /**
+     *
+     * @return the number of straps.
+     */
+    public int getNumberOfStraps(){
+        return this.numberOfStraps;
+    }
+
+    /**
+     * Return the details of this CrossbodyBag.
+     * This method requires you to have created the private
+     * instance variables mentioned above.
+     *
+     * @return the details of the CrossbodyBag
+     */
+    @Override
+    public String toString() {
+        return this.color + " Crossbody Bag with " + this.numberOfStraps + " straps (" + this.numberOfContents + " / " +
+                this.capacity + ")";
+    }
+}
